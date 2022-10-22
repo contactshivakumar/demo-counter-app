@@ -30,13 +30,6 @@ pipeline {
 
            }
 
-           stage('Static Code Analysis') {
-
-                       steps {
-                       withSonarQubeEnv(credentialsId: 'sonar-token') {
-                        bat 'mvn clean package sonar:sonar'
-                       }
-                       }
 
     }
 }
