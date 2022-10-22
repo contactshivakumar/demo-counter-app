@@ -9,9 +9,7 @@ pipeline {
         }
 
          stage('Unit test') {
-         agent {
-                                 label "windows"
-                             }
+
              steps {
                 bat 'mvn test'
              }
