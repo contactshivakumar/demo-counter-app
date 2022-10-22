@@ -2,6 +2,7 @@ pipeline {
     agent any
 environment {
     PATH = "D:\\Softwares\\Git\\usr\\bin;C:\\Softwares\\Git\\bin;${env.PATH}"
+    }
     stages {
         stage('Git Checkout') {
             steps {
@@ -14,6 +15,6 @@ environment {
                 sh 'mvn test'
              }
           }
-    }
+
     }
 }
