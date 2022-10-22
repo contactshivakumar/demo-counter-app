@@ -28,6 +28,14 @@ pipeline {
                 bat 'mvn clean install'
            }
 
+            stage('Static Code Analysis') {
+
+            steps {
+            withSonarQubeEnv(credentialsId: 'sonar-token') {
+             bat 'mvn clean package sonar:sonar'
+            }
+            }
+            }
            }
 
 
