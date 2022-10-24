@@ -37,6 +37,12 @@ pipeline {
                 bat 'mvn clean package sonar:sonar'
              }
            }
+
+           stage('Quality Gate Status') {
+
+             steps {
+                waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
+           }
         }
 
     }
