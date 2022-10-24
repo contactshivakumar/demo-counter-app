@@ -39,5 +39,14 @@ pipeline {
            }
         }
 
+           stage('Quality Gate Status') {
+
+             steps {
+             timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
+                }
+           }
+        }
+
     }
 }
